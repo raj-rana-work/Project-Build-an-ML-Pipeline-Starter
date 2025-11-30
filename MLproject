@@ -4,15 +4,44 @@ conda_env: conda.yml
 entry_points:
   main:
     parameters:
-
       steps:
         description: Comma-separated list of steps to execute (useful for debugging)
         type: str
         default: all
-
       hydra_options:
-        description: Other configuration parameters to override
+        description: Extra configuration overrides
         type: str
-        default: ''
+        default: ""
 
-    command: "python main.py main.steps=\\'{steps}\\' $(echo {hydra_options})"
+    command: >
+      python main.py main.steps='{steps}' $(echo {hydra_options})
+
+  basic_cleaning:
+    parameters:
+      input_artifact:
+        type: str
+        description: "Name of the input artifact from W&B"
+      output_artifact:
+        type: str
+        description: "Name of output cleaned artifact"
+      output_type:
+        type: str
+        description: "Type/category of output artifact"
+      output_description:
+        type: str
+        description: "Description of cleaned output artifact"
+      min_price:
+        type: float
+        description: "Minimum valid price"
+      max_price:
+        type: float
+        description: "Maximum valid price"
+
+    command: >
+      python src/basic_cleaning/run.py \
+        --input_artifact {input_artifact} \
+        --output_artifact {output_artifact} \
+        --output_type {output_type} \
+        --output_description {output_description} \
+        --min_price {min_price} \
+        --max_price {max_price}

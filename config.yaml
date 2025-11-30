@@ -3,6 +3,7 @@ main:
   # All the intermediate files will be copied to this directory at the end of the run.
   # Set this to null if you are running in prod
   project_name: nyc_airbnb
+  wandb_project: nyc_airbnb
   experiment_name: development
   steps: all
 etl:
@@ -10,7 +11,11 @@ etl:
   min_price: 10  # dollars
   max_price: 350  # dollars
 data_check:
+  csv: "clean_sample.csv:latest"
+  ref: "clean_sample_reference:latest"
   kl_threshold: 0.2
+  min_price: 10
+  max_price: 350
 modeling:
   # Fraction of data to use for test (the remaining will be used for train and validation)
   test_size: 0.2

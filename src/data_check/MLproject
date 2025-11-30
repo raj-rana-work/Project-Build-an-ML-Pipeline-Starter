@@ -8,21 +8,32 @@ entry_points:
       csv:
         description: Input CSV file to be tested
         type: string
+        default: "clean_sample.csv:latest"
 
       ref:
         description: Reference CSV file to compare the new csv to
         type: string
+        default: "clean_sample_reference:latest"
 
       kl_threshold:
         description: Threshold for the KL divergence test on the neighborhood group column
         type: float
+        default: 0.2
 
       min_price:
         description: Minimum accepted price
         type: float
+        default: 10
 
       max_price:
         description: Maximum accepted price
         type: float
+        default: 350
 
-    command: "pytest . -vv --csv {csv} --ref {ref} --kl_threshold {kl_threshold} --min_price {min_price} --max_price {max_price}"
+    command: >
+      pytest . -vv
+      --csv {csv}
+      --ref {ref}
+      --kl_threshold {kl_threshold}
+      --min_price {min_price}
+      --max_price {max_price}

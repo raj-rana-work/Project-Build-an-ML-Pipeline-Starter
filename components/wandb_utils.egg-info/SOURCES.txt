@@ -1,0 +1,11 @@
+README.md
+setup.py
+wandb_utils/__init__.py
+wandb_utils/log_artifact.py
+wandb_utils/sanitize_path.py
+wandb_utils.egg-info/PKG-INFO
+wandb_utils.egg-info/SOURCES.txt
+wandb_utils.egg-info/dependency_links.txt
+wandb_utils.egg-info/not-zip-safe
+wandb_utils.egg-info/requires.txt
+wandb_utils.egg-info/top_level.txt
