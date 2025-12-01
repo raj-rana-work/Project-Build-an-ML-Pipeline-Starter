@@ -179,3 +179,15 @@ Please, make sure all steps are using **the same** python version and that you h
 ## License
 
 [License](LICENSE.txt)
+
+## Project Links for Reviewer
+
+To reproduce, inspect, and validate the pipeline, please use the following links:
+
+- **GitHub Repository (Project Code & Releases)**  
+  https://github.com/raj-rana-work/Project-Build-an-ML-Pipeline-Starter
+
+- **Weights & Biases Project (nyc_airbnb — All Pipeline Runs & Artifacts)**  
+  https://wandb.ai/raj-rana-work-western-governors-university/nyc_airbnb
+
+
