@@ -42,11 +42,8 @@ def go(args):
     idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
     df = df[idx].copy()
 
-    # ---- REMOVED OVER-FILTERING LINES ----
-    # df = df[df['availability_365'] > 0].copy()
-    # df = df.dropna(subset=['host_name'])
-    # df = df[df['room_type'] == "Entire home/apt"].copy()
-    # --------------------------------------
+    # RESTORED: match reference dataset room_type
+    df = df[df['room_type'] == "Entire home/apt"].copy()
 
     # Apply price filter again (ensure consistency after filtering)
     df = df[df['price'].between(min_price, max_price)].copy()
